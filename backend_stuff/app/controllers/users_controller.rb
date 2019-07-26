@@ -29,9 +29,9 @@ class UsersController < ApplicationController
     end
 
     def authenticate
-        user = user.find_by(username: params[:username])
+        user = User.find_by(username: params[:username])
         if user != nil && user.authenticate(params[:password])
-            render json: user, method: [ :auth_token ]
+            render json: user, methods: [ :auth_token ]
         else
             render json: { error: true, message: 'Login failed' }
         end 
