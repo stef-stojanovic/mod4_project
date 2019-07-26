@@ -19,4 +19,5 @@ class User < ApplicationRecord
         super.except('password_digest')
     end 
 
+    
 end
