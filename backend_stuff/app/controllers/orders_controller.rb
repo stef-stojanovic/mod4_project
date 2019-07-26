@@ -13,7 +13,7 @@ class OrdersController < ApplicationController
 
     def index
         orders = Order.all
-        render json: orders, methods: [:user]
+        render json: orders
     end
 
     def update

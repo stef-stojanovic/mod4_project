@@ -1,4 +1,4 @@
-class UserController < ApplicationController
+class UsersController < ApplicationController
 
     def index
         users = User.all
@@ -8,6 +8,7 @@ class UserController < ApplicationController
     def create
         
         user = User.create(user_params)
+        # byebug
         render json: user
 
     end
@@ -27,9 +28,18 @@ class UserController < ApplicationController
     def new
     end
 
+    def authenticate
+        user = user.find_by(username: params[:username])
+        if user != nil && user.authenticate(params[:password])
+            render json: user, method: [ :auth_token ]
+        else
+            render json: { error: true, message: 'Login failed' }
+        end 
+    end
+
    
     private def user_params
-        params.require(:user).permit(:username, :password, :password_confirmation)
+        params.permit(:username, :password)
     end 
 
 end
