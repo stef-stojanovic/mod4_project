@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
 
+    skip_before_action :define_current_user, only: [ :authenticate, :create ]
+
     def index
         users = User.all
         render json: users
