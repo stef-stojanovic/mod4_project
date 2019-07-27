@@ -16,10 +16,14 @@ ActiveRecord::Schema.define(version: 2019_07_25_192855) do
   enable_extension "plpgsql"
 
   create_table "items", force: :cascade do |t|
-    t.string "name"
+    t.string "brand"
+    t.string "detail"
     t.integer "price"
-    t.string "description"
-    t.string "image_url"
+    t.integer "size"
+    t.string "image1"
+    t.string "image2"
+    t.string "image3"
+    t.string "image4"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
