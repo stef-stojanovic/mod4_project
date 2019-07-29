@@ -1,21 +1,22 @@
 class ItemsController < ApplicationController
+   skip_before_action :define_current_user, only: [:index, :show]
+
     
+    def create
+        item = Item.create(item_params)
+        render json: order
+    end
+    
+    def index
+        items = Item.all
+        render json: items
+    end
 
     def show
         item = Item.find(params[:id])
         render json: item
     end
-
-    def create
-        item = Item.create(item_params)
-        render json: order
-    end
-
-
-    def index
-        items = Item.all
-        render json: items
-    end
+    
 
     def update
         # Locates current item
@@ -24,13 +25,14 @@ class ItemsController < ApplicationController
         item.update(item_params)
     end
 
+
     def item_params
         params.permit(
-            :name,
-            :price,
-            :description,
-            :image_url,
-            :item_id
-            )
+        :name,
+        :price,
+        :description,
+        :image_url
+        )
     end
+ 
 end

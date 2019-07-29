@@ -12,7 +12,7 @@ class UsersController < ApplicationController
         user = User.create(user_params)
         # byebug
         render json: user
-
+        
     end
 
     def show
