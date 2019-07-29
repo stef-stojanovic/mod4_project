@@ -12,8 +12,13 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 class App extends React.Component {
+
+
+
   render() {
+
     return (
+
       <React.Fragment>
         <NavBar />
           <Switch>
@@ -25,7 +30,6 @@ class App extends React.Component {
           </Switch>
           <Modal />
       </React.Fragment>
-   
     );
   }
 }
