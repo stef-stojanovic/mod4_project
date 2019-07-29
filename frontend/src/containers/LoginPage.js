@@ -1,4 +1,10 @@
 import React, { Component } from 'react'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
+
+
+
+
 
 export default class LoginPage extends Component {
     
@@ -33,15 +39,26 @@ export default class LoginPage extends Component {
     
     render() {
         return (
-            <div>
-                <h3>Login Form</h3>
-                <form> 
-                    <input name="username" type="text" onChange={this.handleChange}></input><br></br>
-                    <input name="password" type="text" onChange={this.handleChange}></input><br></br>
-
-                    <input type="submit" onClick={this.handleSubmit}></input>
-
-                </form>
+            <div className='login_background'>
+                <div>
+                    <h3 className="text-center">Sign In</h3>
+                    <Form className="login-form"> 
+                    <FormGroup>
+                        <Label>Username</Label>
+                            <Input name="username" placeholder="username" type="text" onChange={this.handleChange}/>
+                    </FormGroup>
+                    <FormGroup>
+                        <Label>Password</Label>
+                        <Input name="password" placeholder="password" type="password" onChange={this.handleChange}/>
+                    </FormGroup>
+                        <Button className="btn-lg btn-dark btn-block" onClick={this.handleSubmit}>
+                        Log in
+                        </Button>
+                        <div className="text-centered">
+                            <a href="">Sign Up</a>
+                        </div>
+                    </Form>
+                </div>
             </div>
         )
     }
