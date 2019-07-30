@@ -1,6 +1,8 @@
 class ApplicationController < ActionController::API
     before_action :define_current_user
 
+    attr_reader :current_user
+
     def define_current_user
 
         begin 
