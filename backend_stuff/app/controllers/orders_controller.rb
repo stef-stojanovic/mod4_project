@@ -10,6 +10,10 @@ class OrdersController < ApplicationController
         order = Order.new(order_params)
         order.user = self.current_user 
         order.save
+        params[:ordered_items].each do | item |
+            OrderItem.create(item_id: item[:id], order_id: order.id)
+        end
+        
         render json: order
     end
 
@@ -28,7 +32,7 @@ class OrdersController < ApplicationController
     def order_params
         params.permit(
         :user_id,
-        :order_total
+        :order_total,
         )
     end
 
