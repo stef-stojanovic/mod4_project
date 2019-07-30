@@ -1,21 +1,15 @@
 class User < ApplicationRecord
-    has_many :orders 
-    has_secure_password 
-    validates :username, presence: true, uniqueness: true 
+    has_many :orders
+    has_secure_password
+    validates :username, presence: true, uniqeueness: true
     validates :password, length: { in: 6..20 }
 
-
-    
-
-
-    # encode token here
     def auth_token
         JWT.encode({ id: self.id}, 'woeufnsldnfjd')
-    end 
+    end
 
     def as_json(*)
         super.except('password_digest')
-    end 
+    end
 
-    
 end

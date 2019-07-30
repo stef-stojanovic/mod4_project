@@ -1,3 +1,23 @@
+// import React, { Component } from 'react'
+
+// export default class data extends Component {
+  
+//   componentDidMount() {
+//     fetch('http://localhost:3000/items')
+//     .then(response => response.json())
+//     .then(result => storeProducts = result)
+//   }
+  
+//   render() {
+//     return (
+//       <div>
+        
+//       </div>
+//     )
+//   }
+// }
+
+
 export const storeProducts = [
   {
     id: 1,
@@ -142,7 +162,7 @@ export const storeProducts = [
     count: 0,
     total: 0
   }
-];
+]
 
 export const detailProduct = {
   id: 1,
