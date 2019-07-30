@@ -16,6 +16,14 @@ export default class NavBar extends Component {
                    <Link to="/" className="nav-link">
                    products
                    </Link> 
+                   <Link to="/orders" className="nav-link">
+                   My Account
+                   </Link> 
+                   <Link to="/" className="nav-link" onClick={()=> {
+                       localStorage.clear()
+                   }}>
+                   Log Out
+                   </Link> 
                 </ul>
                 <Link to='/cart' className='ml-auto'>
                     <ButtonContainer>
