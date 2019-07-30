@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   # Route to authenticate user 
   post '/users/authenticate', to: 'users#authenticate' 
-  get '/create-account', to: 'users#create'
+  post '/create-account', to: 'users#create'
   get '/user/:id', to: 'users#show'
   # Sneaker routes 
   get '/sneakers', to: 'items#index'

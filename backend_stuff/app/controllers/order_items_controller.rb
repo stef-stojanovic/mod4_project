@@ -6,7 +6,10 @@ class OrderItemsController < ApplicationController
     end
 
     def create
-        order_item = Order_item.create(order_item_params)
+        order_item = Order_item.new(order_item_params)
+        order_item.order = self.id
+        order_item.item = self.id
+        order_item.save
         render json: order
     end
 
