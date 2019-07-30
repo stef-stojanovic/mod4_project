@@ -5,9 +5,7 @@ class User < ApplicationRecord
     validates :password, length: { in: 6..20 }
 
 
-    # def password=(value)
-    #     self.password_digest = Bcrypt.hash(value)
-    # end
+    
 
 
     # encode token here
