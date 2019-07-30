@@ -7,13 +7,12 @@ import Cart from './components/Cart/Cart';
 import Default from './components/Default';
 import Modal from './components/Modal'
 import LoginPage from './containers/LoginPage'
+import Orders from './components/AccountDetails/Orders'
 
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 class App extends React.Component {
-
-
 
   render() {
 
@@ -23,6 +22,7 @@ class App extends React.Component {
         <NavBar />
           <Switch>
             <Route exact path="/" component={Productlist}></Route>
+            <Route exact path="/orders" component={Orders}></Route>
             <Route path="/login" component={LoginPage}></Route>
             <Route path="/details" component={Details}></Route>
             <Route path="/cart" component={Cart}></Route>

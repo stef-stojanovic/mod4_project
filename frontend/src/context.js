@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { storeProducts, detailProduct } from './data' 
+import { detailProduct } from './data' 
 
 
 const ProductContext = React.createContext();
@@ -18,13 +18,18 @@ class ProductProvider extends Component {
     }
 
     componentDidMount() {
-        this.setProducts()
+        fetch('http://localhost:3000/items')
+        .then(response => response.json())
+        .then(result => {
+            this.setState(()=>{
+                return {products: result}
+            })
+        })
     }
-
 
     setProducts = () => {
         let products = [];
-        storeProducts.forEach( item => {
+        this.state.products.forEach( item => {
             const singleItem = {...item};
             products = [...products, singleItem]
         })
@@ -159,6 +164,20 @@ class ProductProvider extends Component {
         })
     }
 
+    createOrder = (cartTotal) => {
+        fetch('http://localhost:3000/orders/create', {
+            method: 'POST',
+            headers: {
+                'Content-Type':'application/json',
+                'Authorization': `Bearer ${localStorage.getItem('token')}`
+            },
+            body: JSON.stringify({
+              order_total: cartTotal
+            })
+
+        })
+    }
+
     addTotals = () => {
         let subTotal = 0;
         this.state.cart.map(item => (subTotal += item.total))
@@ -185,7 +204,8 @@ class ProductProvider extends Component {
                 increment: this.increment,
                 decrement: this.decrement,
                 removeItem: this.removeItem,
-                clearCart: this.clearCart
+                clearCart: this.clearCart,
+                createOrder: this.createOrder
             }}>
                 {this.props.children}
             </ProductContext.Provider>

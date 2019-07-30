@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { ProductConsumer } from "../context";
-import { ButtonContainer } from './Button';
 import PropTypes from 'prop-types'
 
 export default class Product extends Component {

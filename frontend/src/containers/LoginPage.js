@@ -2,10 +2,6 @@ import React, { Component } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 
-
-
-
-
 export default class LoginPage extends Component {
     
     state = {

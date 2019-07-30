@@ -7,7 +7,9 @@ class OrdersController < ApplicationController
     end
 
     def create
-        order = Order.create(order_params)
+        order = Order.new(order_params)
+        order.user = self.current_user 
+        order.save
         render json: order
     end
 
@@ -25,7 +27,8 @@ class OrdersController < ApplicationController
 
     def order_params
         params.permit(
-        :user_id
+        :user_id,
+        :order_total
         )
     end
 
