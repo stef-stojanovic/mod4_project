@@ -1,4 +1,5 @@
 class OrdersController < ApplicationController
+    # skip_before_action :define_current_user, only: [:index, :show]
 
     def show
         order = Order.find(params[:id])
@@ -6,10 +7,11 @@ class OrdersController < ApplicationController
     end
 
     def create
-        order = Order.create(order_params)
+        order = Order.new(order_params)
+        order.user = self.current_user 
+        order.save
         render json: order
     end
-
 
     def index
         orders = Order.all
@@ -25,8 +27,10 @@ class OrdersController < ApplicationController
 
     def order_params
         params.permit(
-            :user_id
-            :order_id
-            )
+        :user_id,
+        :order_total
+        )
     end
+
+
 end

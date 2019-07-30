@@ -25,8 +25,8 @@ class OrderItemsController < ApplicationController
 
     def order_item_params
         params.permit(
-            :order_id,
-            :item_id
-            )
+        :order_id,
+        :item_id
+        )
     end
 end
