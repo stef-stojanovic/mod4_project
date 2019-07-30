@@ -39,6 +39,7 @@ export default class Orders extends Component {
                                 <Title name="your" title="orders"></Title>
                                 <OrderColumns />
                                 <OrderList value={this.state.orders}/>
+                                <OrderTotals value={this.state.orders}/>
                             </React.Fragment>
                             )}
                             else {

@@ -19,7 +19,7 @@ export default class NavBar extends Component {
                    <Link to="/orders" className="nav-link">
                    My Account
                    </Link> 
-                   <Link to="/" className="nav-link" onClick={()=> {
+                   <Link to="/login" className="nav-link" onClick={()=> {
                        localStorage.clear()
                    }}>
                    Log Out
