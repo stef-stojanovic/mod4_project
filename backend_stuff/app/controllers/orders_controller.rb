@@ -3,7 +3,8 @@ class OrdersController < ApplicationController
 
     def show
         order = Order.find(params[:id])
-        render json: order
+        ordered_items = order.items
+        render json: { order: order, ordered_items: ordered_items }
     end
 
     def create

@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   get '/sneaker/:id/details', to: 'items#show'
   # Users' order routes
   get '/orders', to: 'orders#index'
-  get '/order/:id/', to: 'orders#show'
+  get '/orders/:id/', to: 'orders#show'
   post '/orders/create', to: 'orders#create'
 
   

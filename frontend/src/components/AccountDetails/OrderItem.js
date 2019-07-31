@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 export default function OrderItem({order}) {
     const {id, user_id, order_total, created_at } = order;
@@ -7,7 +8,9 @@ export default function OrderItem({order}) {
         <div className = "row my-2 text-capitalize text-right">
         
             <div className = "col-10 mx-auto col-lg-2">
-                {id}
+                    <Link to={`/detailedOrder/${id}`}>
+                        View Details: Order-{id}
+                    </Link>
             </div>
         
             <div className = "col-10 mx-auto col-lg-2">
