@@ -8,6 +8,8 @@ import Default from './components/Default';
 import Modal from './components/Modal'
 import LoginPage from './containers/LoginPage'
 import Orders from './components/AccountDetails/Orders'
+import SignUp from './containers/SignUp'
+
 
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -24,6 +26,7 @@ class App extends React.Component {
             <Route exact path="/" component={Productlist}></Route>
             <Route exact path="/orders" component={Orders}></Route>
             <Route path="/login" component={LoginPage}></Route>
+            <Route path="/register" component={SignUp}></Route>
             <Route path="/details" component={Details}></Route>
             <Route path="/cart" component={Cart}></Route>
             <Route component={Default}></Route>

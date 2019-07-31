@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { detailProduct } from './data' 
 
 
 const ProductContext = React.createContext();
@@ -8,10 +7,10 @@ const ProductContext = React.createContext();
 class ProductProvider extends Component {
     state={
         products: [],
-        detailProduct: detailProduct,
+        detailProduct: 0,
         cart: [],
         modalOpen: false,
-        modalProduct: detailProduct,
+        modalProduct: 0,
         cartSubTotal: 0,
         cartTax: 0,
         cartTotal: 0
@@ -164,7 +163,10 @@ class ProductProvider extends Component {
         })
     }
 
-    createOrder = (cartTotal) => {
+    createOrderedItems = () => {}
+
+
+    createOrder = (cartTotal, cart) => {
         if(localStorage.token && localStorage.token !== "undefined"){
         fetch('http://localhost:3000/orders/create', {
             method: 'POST',
@@ -173,10 +175,13 @@ class ProductProvider extends Component {
                 'Authorization': `Bearer ${localStorage.getItem('token')}`
             },
             body: JSON.stringify({
-              order_total: cartTotal
+              order_total: cartTotal,
+              ordered_items: cart
             })
 
-        }).then(this.clearCart)
+        })
+        .then(window.location.replace('/'))
+        .then(alert("You placed an order!"))
     }
     else{
         window.alert("Please Log In")
@@ -211,7 +216,8 @@ class ProductProvider extends Component {
                 decrement: this.decrement,
                 removeItem: this.removeItem,
                 clearCart: this.clearCart,
-                createOrder: this.createOrder
+                createOrder: this.createOrder,
+                createOrderedItems: this.createOrder
             }}>
                 {this.props.children}
             </ProductContext.Provider>

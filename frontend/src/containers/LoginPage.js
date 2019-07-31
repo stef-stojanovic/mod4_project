@@ -29,6 +29,7 @@ export default class LoginPage extends Component {
         })
         .then(r => r.json())
         .then( user => localStorage.setItem('token', user.auth_token))
+        .then(() => {window.location.replace('/')})
         
     }
 
@@ -51,7 +52,7 @@ export default class LoginPage extends Component {
                         Log in
                         </Button>
                         <div className="text-centered">
-                            <a href="">Sign Up</a>
+                            <a href="/register">Sign Up</a>
                         </div>
                     </Form>
                 </div>
