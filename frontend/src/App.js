@@ -8,6 +8,7 @@ import Default from './components/Default';
 import Modal from './components/Modal'
 import LoginPage from './containers/LoginPage'
 import Orders from './components/AccountDetails/Orders'
+import DetailedOrder from './components/OrderedItems/DetailedOrder'
 import SignUp from './containers/SignUp'
 
 
@@ -25,6 +26,7 @@ class App extends React.Component {
           <Switch>
             <Route exact path="/" component={Productlist}></Route>
             <Route exact path="/orders" component={Orders}></Route>
+            <Route exact path="/detailedOrder/:id" component={DetailedOrder}></Route>
             <Route path="/login" component={LoginPage}></Route>
             <Route path="/register" component={SignUp}></Route>
             <Route path="/details" component={Details}></Route>
