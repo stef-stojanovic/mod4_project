@@ -5,18 +5,15 @@ export default function OrderItem({order}) {
 
     return (
         <div className = "row my-2 text-capitalize text-right">
+        
             <div className = "col-10 mx-auto col-lg-2">
                 {id}
             </div>
+        
             <div className = "col-10 mx-auto col-lg-2">
                 {user_id}
             </div>
-            {/* <div className = "col-10 mx-auto col-lg-2">
-                <div className="cart-icon" onClick={()=>removeItem(id)}>
-                <i className="fas fa-trash"/>
-                </div>
-            </div> */}
-
+        
             <div className = "col-10 mx-auto col-lg-2">
                 <strong>Date : {created_at} </strong>
             </div>
@@ -24,6 +21,7 @@ export default function OrderItem({order}) {
             <div className = "col-10 mx-auto col-lg-2">
                 $ {order_total}
             </div>
+        
         </div>
     )
 }
