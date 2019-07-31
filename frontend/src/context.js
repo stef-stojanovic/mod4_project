@@ -165,6 +165,7 @@ class ProductProvider extends Component {
     }
 
     createOrder = (cartTotal) => {
+        if(localStorage.token && localStorage.token !== "undefined"){
         fetch('http://localhost:3000/orders/create', {
             method: 'POST',
             headers: {
@@ -175,8 +176,13 @@ class ProductProvider extends Component {
               order_total: cartTotal
             })
 
-        })
+        }).then(this.clearCart)
     }
+    else{
+        window.alert("Please Log In")
+        window.location = '/login'
+        }
+}
 
     addTotals = () => {
         let subTotal = 0;
