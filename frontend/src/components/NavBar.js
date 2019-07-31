@@ -44,14 +44,6 @@ export default class NavBar extends Component {
                         my cart
                         </span>
                 </Link>
-                <div>
-                    <Form onSubmit={ () => this.handleSubmit}>
-                        <Label> Search </Label>
-                        <input onChange={ e => {this.setState({
-                            searchTerm: e.target.value
-                        })}}type="text"/>
-                    </Form>
-                </div>
             </NavWrapper>
         )
     }
