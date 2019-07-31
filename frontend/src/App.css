@@ -1,6 +1,6 @@
 :root{
-  --mainBlue:#39c3fa;
-  --lightBlue:rgb(213, 245, 247);
+  --mainBlue:#a7e9e6;
+  --lightBlue:rgb(194, 245, 248);
   --mainWhite: rgb(245, 252, 255);
   --mainDark: #232528;
   --mainYellow: #ffa400;
@@ -48,6 +48,10 @@ body {
   
 }
 
+.form-div {
+  position: center;
+}
+
 .login-form {
   width: 100%;
   max-width: 330px;
@@ -57,11 +61,12 @@ body {
 }
 
 .login_background {
-  background-image: url("https://images.pexels.com/photos/2421374/pexels-photo-2421374.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
-  background-position: center;
-  background-size: 100%; 
-  width: 100%;
+  background-image: url("http://kickstq.com/files/9714/6884/0975/jordan-circle-IMG_8697.JPG");
+  background-position: bottom;
+  background-size: 85%; 
   height: 100vh;
   background-repeat: no-repeat;
 }
+
+/* https://images.pexels.com/photos/2421374/pexels-photo-2421374.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940 */
 

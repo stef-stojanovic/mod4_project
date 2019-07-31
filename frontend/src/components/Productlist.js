@@ -8,6 +8,12 @@ export default class Productlist extends Component {
    
     render() {
         return (
+            // <Form onSubmit={this.props.handleSubmit}>
+            //     <div>
+            //         <label>Search</label>
+            //         <input type=/>
+            //     </div>
+            // </Form>
             <React.Fragment>
                 <div className = "py-5">
                     <div className="container">

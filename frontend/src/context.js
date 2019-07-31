@@ -223,6 +223,10 @@ class ProductProvider extends Component {
             </ProductContext.Provider>
         )
     }
+
+    handleSearch = () => {
+        console.log('ugabuga')
+    }
 }
 
 const ProductConsumer = ProductContext.Consumer;

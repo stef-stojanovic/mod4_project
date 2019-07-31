@@ -36,25 +36,27 @@ export default class LoginPage extends Component {
     
     render() {
         return (
-            <div className='login_background'>
-                <div>
-                    <h3 className="text-center">Sign In</h3>
-                    <Form className="login-form"> 
-                    <FormGroup>
-                        <Label>Username</Label>
-                            <Input name="username" placeholder="username" type="text" onChange={this.handleChange}/>
-                    </FormGroup>
-                    <FormGroup>
-                        <Label>Password</Label>
-                        <Input name="password" placeholder="password" type="password" onChange={this.handleChange}/>
-                    </FormGroup>
-                        <Button className="btn-lg btn-dark btn-block" onClick={this.handleSubmit}>
-                        Log in
-                        </Button>
-                        <div className="text-centered">
-                            <a href="/register">Sign Up</a>
-                        </div>
-                    </Form>
+            <div>
+                <div className='login_background'>
+                    <div className="form-div">
+                        <h3 className="text-center">Sign In</h3>
+                        <Form className="login-form"> 
+                        <FormGroup>
+                            <Label>Username</Label>
+                                <Input name="username" placeholder="username" type="text" onChange={this.handleChange}/>
+                        </FormGroup>
+                        <FormGroup>
+                            <Label>Password</Label>
+                            <Input name="password" placeholder="password" type="password" onChange={this.handleChange}/>
+                        </FormGroup>
+                            <Button className="btn-lg btn-grey btn-block" onClick={this.handleSubmit}>
+                            Log in
+                            </Button>
+                            <div className="text-centered">
+                                <a href="/register">Sign Up</a>
+                            </div>
+                        </Form>
+                    </div>
                 </div>
             </div>
         )
