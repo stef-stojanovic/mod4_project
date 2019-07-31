@@ -1,10 +1,22 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import { Form, Label } from 'reactstrap';
 
 
 
 export default class NavBar extends Component {
+
+    state = {
+        searchTerm: ''
+    }
+
+
+    handleSubmit = (e) => {
+        e.preventDefault()
+        this.props.onSubmit(this.state.searchTerm)
+    }
+
     render() {
         return (
             <NavWrapper className="navbar navbar-expand-sm navbar-dark px-sm-5">
@@ -21,7 +33,7 @@ export default class NavBar extends Component {
                    </Link> 
                    <Link to="/login" className="nav-link" onClick={()=> {
                        localStorage.clear()
-                   }}>
+                    }}>
                    Log Out
                    </Link> 
                 </ul>
@@ -31,6 +43,14 @@ export default class NavBar extends Component {
                         my cart
                         </span>
                 </Link>
+                <div>
+                    <Form onSubmit={ () => this.handleSubmit}>
+                        <Label> Search </Label>
+                        <input onChange={ e => {this.setState({
+                            searchTerm: e.target.value
+                        })}}type="text"/>
+                    </Form>
+                </div>
             </NavWrapper>
         )
     }
