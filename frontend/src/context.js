@@ -183,7 +183,7 @@ class ProductProvider extends Component {
         .then(window.location.replace('/'))
         .then(alert("You placed an order!"))
     }
-    else{
+    else {
         window.alert("Please Log In")
         window.location = '/login'
         }

@@ -30,7 +30,6 @@ export default class LoginPage extends Component {
         .then(r => r.json())
         .then( user => localStorage.setItem('token', user.auth_token))
         .then(() => {window.location.replace('/')})
-        
     }
 
     
