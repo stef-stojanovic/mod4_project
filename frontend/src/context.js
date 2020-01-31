@@ -13,7 +13,8 @@ class ProductProvider extends Component {
         modalProduct: 0,
         cartSubTotal: 0,
         cartTax: 0,
-        cartTotal: 0
+        cartTotal: 0,
+        searchTerm: ''
     }
 
     componentDidMount() {
@@ -26,7 +27,12 @@ class ProductProvider extends Component {
         })
     }
 
+    onSubmit = (e) => {
+      console.log('here')
+    }
+
     setProducts = () => {
+        
         let products = [];
         this.state.products.forEach( item => {
             const singleItem = {...item};
@@ -217,16 +223,14 @@ class ProductProvider extends Component {
                 removeItem: this.removeItem,
                 clearCart: this.clearCart,
                 createOrder: this.createOrder,
-                createOrderedItems: this.createOrder
+                createOrderedItems: this.createOrder,
+                handleSubmit: this.handleSubmit
             }}>
                 {this.props.children}
             </ProductContext.Provider>
         )
     }
 
-    handleSearch = () => {
-        console.log('ugabuga')
-    }
 }
 
 const ProductConsumer = ProductContext.Consumer;

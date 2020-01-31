@@ -1,16 +1,27 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import { Form, Label } from 'reactstrap';
 
 
 
 
 export default class NavBar extends Component {
+
+    state = {
+        searchTerm: ''
+    }
+
+
+    handleSubmit = (e) => {
+        e.preventDefault()
+        this.props.onSubmit(this.state.searchTerm)
+    }
+
     render() {
         return (
             <NavWrapper className="navbar navbar-expand-sm navbar-dark px-sm-5">
                 <Link to='/'>
-                    {/* <img src='favicon.ico' alt="store" className="navbar-brand" /> */}
                 </Link>
                 <ul className="navbar-nav align-items-center">
                    <li className="nav-item ml-5"></li>
@@ -22,7 +33,7 @@ export default class NavBar extends Component {
                    </Link> 
                    <Link to="/login" className="nav-link" onClick={()=> {
                        localStorage.clear()
-                   }}>
+                    }}>
                    Log Out
                    </Link> 
                 </ul>
