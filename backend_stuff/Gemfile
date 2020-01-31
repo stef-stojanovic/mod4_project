@@ -7,6 +7,8 @@ ruby '2.6.1'
 gem 'rails', '~> 5.2.3'
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
+gem 'rails_12factor', group: :production
+
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -17,6 +19,7 @@ gem 'puma', '~> 3.11'
 gem 'bcrypt', '~> 3.1.7'
 gem 'jwt'
 gem 'rails_12factor'
+
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
